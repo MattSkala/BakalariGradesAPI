@@ -238,7 +238,7 @@ class BakalariGradesAPI {
       // Remove suspicious date exclamation mark
       $grade['grade'] = str_replace('!', '', $grade['grade']);
       // Do not return 'absent' grades
-      if ($grade['grade'] == 'A') {
+      if ($grade['grade'] == 'A' || $grade['grade'] == '?') {
         continue;
       }
 
