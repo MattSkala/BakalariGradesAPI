@@ -291,6 +291,10 @@ class BakalariGradesAPI {
     $html = $this->fetchGrades();
     $html = $this->fetchGrades();   // not need for libver 17.5.2012
 
+    if (!$html) {
+      return false;
+    }
+
     $viewstate = $this->parseViewstate($html);
     $eventvalidation = $this->parseEventValidation($html);
 
